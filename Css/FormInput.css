@@ -1,0 +1,29 @@
+.Container{
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    font-weight: bold;
+    padding: 10px;
+}
+.headerContainer{
+    background-color: tomato;
+}
+html,input{
+    font-family:sans-serif;
+    margin-left: 15px;
+}
+body{
+    width:100%;
+    max-width: 600px;
+    margin:auto;
+    padding:2rem;
+}
+div{
+    margin-top: 19px;
+    margin-bottom:20px;
+    display:flex;
+    align-items: center;
+}
+label{
+    width:30%;
+}
