@@ -53,14 +53,23 @@
         </div>
     </form>
     <script>
-        var textInput = document.querySelector('#Name')
-        var errorInput = document.querySelector('.text-error')
-        textInput.addEventListener('input', function () {
-            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$')
-            if (nameRegex.test(textInput.value))
-                errorInput.textContent = "";
-            else
-                errorInput.textContent = "Name is Incorrect";
+         //------------Validating For Email---------------//
+        var Inputfield = document.querySelector('#email')
+        var errorInp = document.querySelector('.text-error-email')
+        Inputfield.addEventListener('input', function () {
+            let nameRegex = RegExp('^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$')
+            if (nameRegex.test(Inputfield.value)) {
+                errorInp.textContent = "";
+                document.getElementById('email').addEventListener('input', function () {
+                Inputfield.style.border = '1px solid green';
+                })
+            }
+            else {
+                errorInp.textContent = "Email is in correct";
+                document.getElementById('email').addEventListener('input', function () {
+                Inputfield.style.border = '1px solid red';
+                })
+            }
         });
     </script>
 </body>
