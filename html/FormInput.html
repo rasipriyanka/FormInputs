@@ -62,21 +62,21 @@
         </div>
     </form>
     <script>
-         //------------Validating For Email---------------//
-        var Inputfield = document.querySelector('#email')
-        var errorInp = document.querySelector('.text-error-email')
-        Inputfield.addEventListener('input', function () {
-            let nameRegex = RegExp('^[0-9a-zA-Z]+[.-_--]{0,2}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$')
-            if (nameRegex.test(Inputfield.value)) {
-                errorInp.textContent = "";
-                document.getElementById('email').addEventListener('input', function () {
-                Inputfield.style.border = '1px solid green';
+        //------------Validating For PhoneNumber---------------//
+        var text = document.querySelector('#num')
+        var error = document.querySelector('.text-error-num')
+        text.addEventListener('input', function () {
+            let nameRegex = RegExp('^(?=.*[0-9])[A-Za-z0-9]{8,}$')
+            if (nameRegex.test(text.value)) {
+                error.textContent = "";
+                document.getElementById('num').addEventListener('input', function () {
+                    text.style.border = '1px solid green';
                 })
             }
             else {
-                errorInp.textContent = "Email is in correct";
-                document.getElementById('email').addEventListener('input', function () {
-                Inputfield.style.border = '1px solid red';
+                error.textContent = "PhoneNumber is in correct";
+                document.getElementById('num').addEventListener('input', function () {
+                    text.style.border = '1px solid red';
                 })
             }
         });
