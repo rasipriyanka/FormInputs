@@ -62,21 +62,21 @@
         </div>
     </form>
     <script>
-        //------------Validating For PhoneNumber---------------//
-        var text = document.querySelector('#num')
-        var error = document.querySelector('.text-error-num')
-        text.addEventListener('input', function () {
-            let nameRegex = RegExp('^(?=.*[0-9])[A-Za-z0-9]{8,}$')
-            if (nameRegex.test(text.value)) {
-                error.textContent = "";
-                document.getElementById('num').addEventListener('input', function () {
-                    text.style.border = '1px solid green';
+        //---------Validating For Password------------//
+        var textInputfield = document.querySelector('#pwd')
+        var errorInputt = document.querySelector('.text-error-pwd')
+        textInputfield.addEventListener('input', function () {
+            let nameRegex = RegExp('^[A-Za-z0-9]{8,}$')
+            if (nameRegex.test(textInputfield.value)) {
+                errorInputt.textContent = "";
+                document.getElementById('pwd').addEventListener('input', function () {
+                    textInputfield.style.border = '1px solid green';
                 })
             }
             else {
-                error.textContent = "PhoneNumber is in correct";
-                document.getElementById('num').addEventListener('input', function () {
-                    text.style.border = '1px solid red';
+                errorInputt.textContent = "password  is Incorrect";
+                document.getElementById('pwd').addEventListener('input', function () {
+                    textInputfield.style.border = '1px solid red';
                 })
             }
         });
